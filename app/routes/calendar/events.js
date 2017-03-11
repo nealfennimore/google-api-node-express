@@ -17,14 +17,13 @@ router.get('/list', (req, res) => {
     });
 });
 
-// POST /calendar/events/list
-router.post('/list', (req, res) => {
-    const { resource } = req;
-
+// POST /calendar/events/insert
+router.post('/insert', (req, res) => {
     calendar.events.insert({
         auth,
         calendarId,
-        resource
+        resource: req.body,
+        sendNotifications: true
     }, (err, resp) => {
         res.json(resp);
     });
