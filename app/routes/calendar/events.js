@@ -8,13 +8,19 @@ const router = express.Router();
 
 // GET /calendar/events/list
 router.get('/list', (req, res) => {
-    calendar.events.list({
-        auth,
-        calendarId,
-        singleEvents: true, // Show all repeating occurences
-    }, (err, resp) => {
-        res.json(resp);
-    });
+    calendar.events.list(
+        Object.assign(
+            {
+                auth,
+                calendarId,
+                singleEvents: true // Show all repeating occurences
+            },
+            req.query
+        ),
+        (err, resp) => {
+            res.json(resp);
+        }
+    );
 });
 
 // POST /calendar/events/insert
