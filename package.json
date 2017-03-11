@@ -28,7 +28,6 @@
   },
   "_moduleAliases": {
     "@app": "app",
-    "config": "app/config",
     "google": "app/google",
     "routes": "app/routes"
   }
