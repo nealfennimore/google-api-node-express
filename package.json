@@ -4,8 +4,8 @@
   "description": "Express server utilizing Google API and JSON Web Tokens for verification",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production forever ./app",
-    "develop": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon --watch ./app --exec node ./app"
+    "start": "NODE_ENV=production nf start api",
+    "develop": "NODE_ENV=development NODE_TLS_REJECT_UNAUTHORIZED=0 nodemon --watch ./app --exec nf start api"
   },
   "author": "Neal Fennimore",
   "license": "MIT",

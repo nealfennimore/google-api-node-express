@@ -4,8 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('routes');
-const { server } = require('config');
 
+const { env: {SERVER_IP, SERVER_PORT}} = process;
 const app = express();
 
 app.use(bodyParser.json());
@@ -26,6 +26,6 @@ app.use((req, res)=>{
     res.type('txt').send('Not found');
 });
 
-app.listen(server.port, server.ip, ()=> {
-    console.log(`Listening on ${server.ip}:${server.port}`);
+app.listen(SERVER_PORT, SERVER_IP, ()=> {
+    console.log(`Listening on ${SERVER_IP}:${SERVER_PORT}`);
 });

@@ -1,9 +1,6 @@
 const express = require('express');
 const { calendar, auth } = require('google');
-const {
-    google: {calendarId}
-} = require('config');
-
+const calendarId = process.env.GOOGLE_CALENDAR_ID;
 const router = express.Router();
 
 // POST /calendar/freebusy/query
