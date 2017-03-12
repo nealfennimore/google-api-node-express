@@ -1,7 +1,11 @@
 const express = require('express');
 const { calendar, auth } = require('google');
+const authenticate = require('auth');
 const calendarId = process.env.GOOGLE_CALENDAR_ID;
+
 const router = express.Router();
+
+router.use(authenticate);
 
 // GET /calendar/events/list
 router.get('/list', (req, res) => {

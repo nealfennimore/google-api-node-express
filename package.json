@@ -29,6 +29,8 @@
   "_moduleAliases": {
     "@app": "app",
     "google": "app/google",
-    "routes": "app/routes"
+    "routes": "app/routes",
+    "auth": "app/auth",
+    "keys": "app/keys"
   }
 }
