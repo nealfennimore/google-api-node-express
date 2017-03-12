@@ -1923,11 +1923,6 @@
       "from": "moment@>=2.6.0",
       "resolved": "http://frodo.ck12.org/sinopia/moment/-/moment-2.17.1.tgz"
     },
-    "moment-timezone": {
-      "version": "0.5.11",
-      "from": "moment-timezone@>=0.5.11 <0.6.0",
-      "resolved": "http://frodo.ck12.org/sinopia/moment-timezone/-/moment-timezone-0.5.11.tgz"
-    },
     "morgan": {
       "version": "1.8.1",
       "from": "morgan@latest",
