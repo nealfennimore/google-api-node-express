@@ -1773,7 +1773,7 @@
     },
     "lodash": {
       "version": "4.17.4",
-      "from": "lodash@>=4.17.4 <5.0.0",
+      "from": "lodash@latest",
       "resolved": "http://frodo.ck12.org/sinopia/lodash/-/lodash-4.17.4.tgz"
     },
     "lodash._baseassign": {
