@@ -45,7 +45,7 @@ openssl rsa -pubout -in keys/priv.pem -out keys/pub.pem
 
 ## Get Access Token
 
-Generate an access token and use that to use authenticated API requests.
+Generate an access token and use it for authenticated API requests.
 
 ```js
 const jwt = require('jsonwebtoken');
