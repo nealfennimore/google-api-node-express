@@ -3,11 +3,15 @@ const fs  = require('fs');
 
 const publicKey = fs.readFileSync('keys/pub.pem');
 
+function removeBearer(token){
+    return token.replace(/Bearer/, '').trim();
+}
+
 function authenticate(req, res, next) {
-    const token = req.body.token || req.query.token || req.headers['x-access-token'];
+    const token = req.body.token || req.query.token || req.headers['authorization'];
 
     if (token) {
-        jwt.verify(token, publicKey, { algorithms: ['RS256'] }, function(err, decoded) {
+        jwt.verify(removeBearer(token), publicKey, { algorithms: ['RS256'] }, function(err, decoded) {
             if (err) {
                 return res.status(403).json({
                     error: true,
