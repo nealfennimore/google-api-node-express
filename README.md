@@ -56,10 +56,11 @@ const privateKey = fs.readFileSync('keys/priv.pem');
 const ACCESS_TOKEN = jwt.sign({}, privateKey, { algorithm: 'RS256'})
 ```
 
-Token can be in one of these locations:
+The token should be in the `Authorization` Header.
 
 ```js
-req.body.token || req.query.token || req.headers['authorization'];
+// Authorization: Bearer <token>
+req.headers['authorization'];
 ```
 
 ## Starting API Server

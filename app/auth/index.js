@@ -8,10 +8,10 @@ function removeBearer(token){
 }
 
 function authenticate(req, res, next) {
-    const token = req.body.token || req.query.token || req.headers['authorization'];
+    const token = removeBearer( req.headers['authorization'] || '' );
 
     if (token) {
-        jwt.verify(removeBearer(token), publicKey, { algorithms: ['RS256'] }, function(err, decoded) {
+        jwt.verify(token, publicKey, { algorithms: ['RS256'] }, function(err, decoded) {
             if (err) {
                 return res.status(403).json({
                     error: true,
