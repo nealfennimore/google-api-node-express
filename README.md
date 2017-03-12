@@ -59,3 +59,10 @@ Generate an access token and use that to use authenticated API requests.
 ```js
     req.body.token || req.query.token || req.headers['x-access-token'];
 ```
+
+## Starting API Server
+
+```sh
+    npm run start
+    npm run develop # With nodemon
+```
