@@ -1,7 +1,10 @@
 const jwt = require('jsonwebtoken');
-const fs  = require('fs');
 
-const publicKey = fs.readFileSync('keys/pub.pem');
+const {
+    env: { AUTH_SECRET, AUTH_ALGORITHM }
+} = process;
+
+const verifyOptions = { algorithms: [AUTH_ALGORITHM] };
 
 function removeBearer(token){
     return token.replace(/Bearer/, '').trim();
@@ -11,7 +14,7 @@ function authenticate(req, res, next) {
     const token = removeBearer( req.headers['authorization'] || '' );
 
     if (token) {
-        jwt.verify(token, publicKey, { algorithms: ['RS256'] }, function(err, decoded) {
+        jwt.verify(token, AUTH_SECRET, verifyOptions, function(err, decoded) {
             if (err) {
                 return res.status(403).json({
                     error: true,
