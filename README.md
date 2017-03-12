@@ -11,7 +11,7 @@ npm install -g foreman # Install foreman globally
 
 ### .env File Example
 
-Update your `.env` file to look like below.
+Update your `.env` file to look similar.
 
 ```js
 {
@@ -41,7 +41,7 @@ Update your `.env` file to look like below.
 ### Generate Keys
 
 We'll use a either a secret key or RSA public key for verifying using JSON Web Tokens for certain API requests.
-Generate a private and public key using the below commands fir RS256.
+Generate a private and public key using the below commands for RS256.
 
 ```sh
 # RS256 key
