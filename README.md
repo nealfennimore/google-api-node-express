@@ -13,7 +13,7 @@ npm install -g foreman # Install foreman globally
 
 Update your `.env` file to look like below.
 
-```json
+```js
 {
     "server": {
         "ip": "0.0.0.0",
@@ -48,21 +48,23 @@ openssl rsa -pubout -in keys/priv.pem -out keys/pub.pem
 Generate an access token and use that to use authenticated API requests.
 
 ```js
-    const jwt = require('jsonwebtoken');
-    const fs  = require('fs');
+const jwt = require('jsonwebtoken');
+const fs  = require('fs');
 
-    const privateKey = fs.readFileSync('keys/priv.pem');
+const privateKey = fs.readFileSync('keys/priv.pem');
 
-    const ACCESS_TOKEN = jwt.sign({}, privateKey, { algorithm: 'RS256'})
+const ACCESS_TOKEN = jwt.sign({}, privateKey, { algorithm: 'RS256'})
 ```
 
+Token can be in one of these locations:
+
 ```js
-    req.body.token || req.query.token || req.headers['x-access-token'];
+req.body.token || req.query.token || req.headers['x-access-token'];
 ```
 
 ## Starting API Server
 
 ```sh
-    npm run start
-    npm run develop # With nodemon
+npm run start
+npm run develop # With nodemon
 ```
