@@ -59,7 +59,7 @@ const privateKey = fs.readFileSync('keys/priv.pem');
 const RS_256_ACCESS_TOKEN = jwt.sign({}, privateKey, { algorithm: 'RS256'})
 
 # HS256
-const HS256_ACCESS_TOKEN = jwt.sign({}, SECRET);
+const HS256_ACCESS_TOKEN = jwt.sign({}, AUTH_SECRET);
 ```
 
 The token should be in the `Authorization` Header.

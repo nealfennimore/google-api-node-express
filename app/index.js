@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const routes = require('routes');
 const _404 = require('./404');
 
-const { env: {SERVER_IP, SERVER_PORT}} = process;
+const { SERVER_IP, SERVER_PORT } = process.env;
 const app = express();
 
 app.use(bodyParser.json());

@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 
 const {
-    env: { AUTH_SECRET, AUTH_ALGORITHM }
-} = process;
+    AUTH_SECRET,
+    AUTH_ALGORITHM
+} = process.env;
 
 const verifyOptions = { algorithms: [AUTH_ALGORITHM] };
 

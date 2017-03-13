@@ -1,12 +1,10 @@
 const google = require('googleapis');
 
 const {
-    env: {
-        GOOGLE_AUTH_CLIENT_EMAIL,
-        GOOGLE_AUTH_PRIVATE_KEY,
-        GOOGLE_API_SCOPES
-    }
-} = process;
+    GOOGLE_AUTH_CLIENT_EMAIL,
+    GOOGLE_AUTH_PRIVATE_KEY,
+    GOOGLE_API_SCOPES
+} = process.env;
 
 const client = new google.auth.JWT(
     GOOGLE_AUTH_CLIENT_EMAIL,
